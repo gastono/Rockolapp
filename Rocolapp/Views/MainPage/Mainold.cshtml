@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+@using Rocolapp.Models
+@{
+    var data = (RocolappUser)ViewData["pubUser"];
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Main</title>
+    
+</head>
+<body>
+    <div id="qrCode"></div>
+    <script src="~/scripts/jquery-1.9.1.min.js"></script>    
+    <script src="~/scripts/jquery-qrcode-0.14.0.min.js"></script>
+    <script>
+        $('#qrCode').qrcode({ text: '@data.Id' });
+    </script>
+</body>
+</html>
